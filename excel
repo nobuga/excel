@@ -1,0 +1,58 @@
+import java.util.Scanner;
+public class Teste{
+    public static void main(String[] args){
+        Scanner in=new Scanner(System.in);
+        System.out.println("————猜拳游戏————");
+        System.out.println("请出拳：(1、剪刀 2、石头 3、布)");
+        int people=in.nextInt();
+        int computer=(int)(Math.random()*3)+1;
+        String Marks="拳头";//这是给人做标记的;
+        String Marks2="拳头";//这是给电脑做标记的；
+        switch(people){
+            case 1:
+            Marks="剪刀";
+            break;
+            case 2:
+            Marks="石头";
+            break;
+            case 3:
+            Marks="布";
+            break;
+        }
+        switch(computer){
+            case 1:
+            Marks2="剪刀";
+            break;
+            case 2:
+            Marks2="石头";
+            break;
+            case 3:
+            Marks2="布";
+            break;
+        }
+        System.out.println(computer);
+        /************start**************/
+         int result = 0;
+        if(Math.abs(people-computer)== 2){
+        result = -(people-computer);
+        }else{
+          result = people-computer;
+        }
+        if(result == 0){
+        System.out.println("平局你出的的是："+Marks+"电脑出的是："+Marks2);
+        }
+        if(result > 0){
+        System.out.println("你赢了你出的是："+Marks+"电脑出的是："+Marks2);
+        }
+        if(result < 0){
+        System.out.println("你输了你出的是："+Marks+"电脑出的是："+Marks2);
+        }
+        /************end***********/
+        if(people==computer){
+            System.out.println("平局你出的的是："+Marks+"电脑出的是："+Marks2);
+        }else if(people==1&&computer==2||people==2&&computer==3||people==3&&computer==1){
+            System.out.println("你输了你出的是："+Marks+"电脑出的是："+Marks2);
+        }else{
+            System.out.println("你赢了你出的是："+Marks+"电脑出的是："+Marks2);
+        }
+    }
